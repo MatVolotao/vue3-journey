@@ -13,6 +13,7 @@
 
 <body>
     <div id="app">
+        <!-- <p>{{greetings}}</p> -->
         {{message()}}
     </div>
 </body>
@@ -20,13 +21,13 @@
     const { createApp } = Vue;
     createApp({
         setup() {
-
+            const greetings = "Hello World Vue js!!!"
             function message() {
-                return 'Message from function'
+                return 'Matheus, ' + greetings
             }
 
             return {
-                message
+                message 
             }
         }
     }).mount('#app')
