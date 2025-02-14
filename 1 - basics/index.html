@@ -13,6 +13,7 @@
 
 <body>
     <div id="app">
+        <p>{{welcome}}</p>
         <p>{{grettings}}</p>
         <p>Is it true: {{ isTrue ? 'Yes':'No'}}</p>
         <p>{{array[0]}}</p>
@@ -23,6 +24,7 @@
     const { createApp } = Vue;
     createApp({
         setup(){
+            const welcome = "Hello World Vue js!!"
             const date = new Date().toLocaleString();
             const grettings = 'Hello guys, today is ' +  date;
             const isTrue = true;
@@ -31,6 +33,7 @@
 
 
             return {
+                welcome,
                 grettings,
                 isTrue,
                 array,
