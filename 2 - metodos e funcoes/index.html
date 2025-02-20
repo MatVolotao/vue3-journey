@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Vue Test</title>
+</head>
+<body>
+    <div id="app">
+        <p>Composition API: {{ messageCompositionApi() }}</p>
+        <p>Composition API (variável): {{ message }}</p>
+        <p>Options API (methods): {{ messageOptionApi() }}</p>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            setup() {
+                function messageCompositionApi(){
+                    return 'Message from Composition API';
+                }
+
+                const message = 'Hello from Composition API';
+
+                return {
+                    messageCompositionApi,
+                    message
+                };
+            },
+            methods: {
+                messageOptionApi() {
+                    return 'Message from Options API';
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
